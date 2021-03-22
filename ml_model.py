@@ -5,7 +5,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
-import warnings
 
 # reading the csv file
 df = pd.read_csv('data_train.csv')
