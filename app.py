@@ -19,12 +19,12 @@ def predict():
     input_features = [x for x in request.form.values()]
     features_value = [np.array(input_features)]
     
-    feature_name = ['Location', 'Year', 'Kilometers_Driven', 'Fuel_Type', 'Transmission',
-       'Owner_Type', 'Mileage', 'Engine', 'Power', 'Seats', 'Company']
+    feature_name = ['Location', 'Year', 'Kilometers_Driven', 'Transmission'
+    , 'Mileage', 'Engine', 'Power', 'Company']
     
     df = pd.DataFrame(features_value, columns= feature_name)
     
-    for col in ['Seats', 'Year']:
+    for col in ['Year']:
         df[col] = df[col].astype('int')
     output = predict_price(df, model)
     return render_template('index.html', prediction_text= 'The Cost of The Car Should be {}'.format(output))
