@@ -17,6 +17,9 @@ df_raw = df.copy()
 data = df_raw.drop('Price', axis = 1)
 data_labels = df_raw['Price']
 
+# using feature importance, we found out that Owner_Type, Fuel_Type,and Seats were not contributing greatly to the prediction, so we will drop them
+col =['Owner_Type', 'Fuel_Type', 'Seats']
+data.drop(col, inplace= True, axis= 1)
 # data preprocessing
 def num_processing(data):
     col = ['Mileage', 'Engine', 'Power']
@@ -25,7 +28,6 @@ def num_processing(data):
         data[i]= data[i].apply(lambda x: list(str(x).split())[0]) 
         data[i] = data[i].replace({'nan': np.nan})
         data[i] = data[i].fillna(data[i].mean())
-    data['Seats'] = data['Seats'].fillna(5).astype('int')
     data['Kilometers_Driven'] = data['Kilometers_Driven'].astype('float')
     
     data['Company'] = data.loc[:, 'Name'].apply(lambda x: list(x.split())[0])
@@ -47,7 +49,7 @@ def num_pipeline_transformer(data):
 def pipeline_transformer(data):
     
     num_attrs, num_pipeline = num_pipeline_transformer(data)
-    cat_attrs = ['Location', 'Fuel_Type', 'Transmission', 'Owner_Type', 'Company']
+    cat_attrs = ['Location', 'Transmission', 'Company']
     
     
     
