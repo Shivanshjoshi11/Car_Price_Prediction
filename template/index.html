@@ -17,15 +17,86 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Location" placeholder="Location" required="required" />
-        <input type="text" name="Year" placeholder="Year" required="required" />
+    <br><select name="Location" id="Location" required="required">
+        <option value="">Select Location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Kochi">Kochi</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        </select>
+        <br>
+        <br>
+        <br>
+    <input type="text" name="Year" placeholder="Year" required="required" />
+    <br>
+        <br>
+        <br>
 		<input type="text" name="Kilometers_Driven" placeholder="Kilometers_Driven" required="required" />
-		<input type="text" name="Transmission" placeholder="Transmission" required="required" />
+    <br>
+        <br>
+        <br>
+    <br><select name="Transmission" id="Transmission" required="required">
+      <option value="">Select Transmission</option>
+      <option value="Manual">Manual</option>
+      <option value="Automatic">Automatic</option>
+      </select>
+      <br>
+        <br>
+        <br>
 		<input type="text" name="Mileage" placeholder="Mileage" required="required" />
+    <br>
+        <br>
+        <br>
 		<input type="text" name="Engine" placeholder="Engine" required="required" />
+    <br>
+        <br>
+        <br>
 		<input type="text" name="Power" placeholder="Power" required="required" />
-		<input type="text" name="Company" placeholder="Company" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <br>
+        <br>
+        <br>
+    <br><select name="Company" id="Company" required="required">
+      <option value="">Select Location</option>
+      <option value="Hyundai">Hyundai</option>
+      <option value="Honda">Honda</option>
+      <option value="Maruti">Maruti</option>
+      <option value="Audi">Audi</option>
+      <option value="Nissan">Nissan</option>
+      <option value="Toyota">Toyota</option>
+      <option value="Volkswagen">Volkswagen</option>
+      <option value="Land">Land</option>
+      <option value="Renault">Renault</option>
+      <option value="Mitsubishi">Mitsubishi</option>
+      <option value="Mercedes-Benz">Mercedes-Benz</option>
+      <option value="BMW">BMW</option>
+      <option value="Mahindra">Mahindra</option>
+      <option value="Ford">Ford</option>
+      <option value="Tata">Tata</option>
+      <option value="Porsche">Porsche</option>
+      <option value="Datsun">Datsun</option>
+      <option value="Jaguar">Jaguar</option>
+      <option value="Volvo">Volvo</option>
+      <option value="Chevrolet">Chevrolet</option>
+      <option value="Skoda">Skoda</option>
+      <option value="Mini">Mini</option>
+      <option value="Fiat">Fiat</option>
+      <option value="Jeep">Jeep</option>
+      <option value="Smart">Smart</option>
+      <option value="Isuzu">Isuzu</option>
+      <option value="ISUZU">ISUZU</option>
+      <option value="Force">Force</option>
+      </select>
+      <br>
+        <br>
+        <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
