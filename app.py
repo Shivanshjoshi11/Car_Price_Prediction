@@ -27,6 +27,6 @@ def predict():
     for col in ['Year']:
         df[col] = df[col].astype('int')
     output = predict_price(df, model)
-    return render_template('index.html', prediction_text= 'The Cost of The Car Should be Rs.{} Lakhs'.format(output))
+    return render_template('index.html', prediction_text= 'The Cost of The Car Should be Rs.{} Lakhs'.format(float(output)))
 if __name__ == "__main__":
     app.run(debug= True)
